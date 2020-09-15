@@ -20,6 +20,7 @@ public class TableMapper extends Mapper<LongWritable, Text,Text,TableBean> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         //获取文件名
+
         FileSplit inputSplit = (FileSplit)context.getInputSplit();
         String fileName = inputSplit.getPath().getName();
         String line = value.toString();
